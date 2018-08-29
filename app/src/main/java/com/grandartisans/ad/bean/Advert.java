@@ -4,32 +4,32 @@ import com.google.gson.annotations.SerializedName;
 
 public class Advert {
 
-    private int id;
-    private int status;
+    private long id;
+    private Integer status;
     private String name;
     private String ident;
     private int type;
-    private int vtype;
+    private long vtype;
     private String ratio;
 
     @SerializedName("advertiserId")
     private int adId;
 
     @SerializedName("ratioid")
-    private int ratioId;
+    private long ratioId;
 
     @SerializedName("advertSize")
-    private int adSize;
+    private String adSize;
 
-    private int standard;
+    private String standard;
 
     @SerializedName("auditNumber")
-    private int auditNum;
+    private String auditNum;
 
-    private int fileSize;
+    private Integer fileSize;
     private int width;
     private int height;
-    private int playType;
+    private long playType;
     private int auditOpinion;
 
     @SerializedName("description")
@@ -41,19 +41,19 @@ public class Advert {
     private int ext_playCount;
     private int ext_positionCount;
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
-    public int getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
@@ -81,11 +81,11 @@ public class Advert {
         return type;
     }
 
-    public void setVtype(int vtype) {
+    public void setVtype(long vtype) {
         this.vtype = vtype;
     }
 
-    public int getVtype() {
+    public long getVtype() {
         return vtype;
     }
 
@@ -105,43 +105,43 @@ public class Advert {
         return adId;
     }
 
-    public void setRatioId(int ratioId) {
+    public void setRatioId(long ratioId) {
         this.ratioId = ratioId;
     }
 
-    public int getRatioId() {
+    public long getRatioId() {
         return ratioId;
     }
 
-    public void setAdSize(int adSize) {
+    public void setAdSize(String adSize) {
         this.adSize = adSize;
     }
 
-    public int getAdSize() {
+    public String getAdSize() {
         return adSize;
     }
 
-    public void setStandard(int standard) {
+    public void setStandard(String standard) {
         this.standard = standard;
     }
 
-    public int getStandard() {
+    public String getStandard() {
         return standard;
     }
 
-    public void setAuditNum(int auditNum) {
+    public void setAuditNum(String auditNum) {
         this.auditNum = auditNum;
     }
 
-    public int getAuditNum() {
+    public String getAuditNum() {
         return auditNum;
     }
 
-    public void setFileSize(int fileSize) {
+    public void setFileSize(Integer fileSize) {
         this.fileSize = fileSize;
     }
 
-    public int getFileSize() {
+    public Integer getFileSize() {
         return fileSize;
     }
 
@@ -161,11 +161,11 @@ public class Advert {
         return height;
     }
 
-    public void setPlayType(int playType) {
+    public void setPlayType(long playType) {
         this.playType = playType;
     }
 
-    public int getPlayType() {
+    public long getPlayType() {
         return playType;
     }
 

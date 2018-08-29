@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String HOST = "http://api.dsp.grandartisans.cn";
     private static final String API_TOKEN = "/v1/api/token";
     private static final String API_SCHEDULE_TIMES = "/v1/api/schedule/times";
-    private static final String DEVICE_CLIENT_TID = "TESTHFGA001";
+    private static final String DEVICE_CLIENT_TID = "TESTHFGA002";
     private static final String TAG = "Grandartisans";
 
     private static final int KEY = 123456;
@@ -201,7 +201,7 @@ public class MainActivity extends AppCompatActivity {
             // Get first file list item in package ad
             FileListItem fileListItem = pkgAdItem.getFileList().get(0);
 
-            int vtype = pkgAdItem.getAd().getVtype();
+            long vtype = pkgAdItem.getAd().getVtype();
             String filePath = fileListItem.getFilePath();
 
             set_view_layout(vtype, reg_width, reg_height, margin_left, margin_top, filePath);
@@ -214,20 +214,20 @@ public class MainActivity extends AppCompatActivity {
         return gson.fromJson(jsonStr, jsonType);
     }
 
-    private void set_view_layout(int view_type, int width, int height, int left, int top, String filePath) {
+    private void set_view_layout(long view_type, int width, int height, int left, int top, String filePath) {
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(width, height);
         layoutParams.setMargins(left, top, 0, 0);
         if (view_type == 1) {
             ImageView imageView = new ImageView(this);
             imageView.setLayoutParams(layoutParams);
-            Glide.with(this).load(filePath).into(imageView);
             relativeLayout.addView(imageView);
+            Glide.with(this).load(filePath).into(imageView);
         } else if (view_type == 2) {
             VideoView videoView = new VideoView(this);
             videoView.setLayoutParams(layoutParams);
+            relativeLayout.addView(videoView);
             videoView.setVideoURI(Uri.parse(filePath));
             videoView.start();
-            relativeLayout.addView(videoView);
         }
     }
 
